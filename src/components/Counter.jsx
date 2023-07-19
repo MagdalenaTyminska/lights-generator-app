@@ -38,5 +38,4 @@ export const Counter = ({ name }) => {
 
 Counter.propTypes = {
   name: PropTypes.string,
-  count: PropTypes.number,
 };
