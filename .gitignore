@@ -3,6 +3,7 @@ logs
 *.log
 .vsc
 .idea
+.history
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
