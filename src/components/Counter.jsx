@@ -3,34 +3,17 @@ import { Text } from "./Text";
 import { IconAdd } from "./icons/IconAdd";
 import { IconMinus } from "./icons/IconMinus";
 import styles from "./Counter.module.css";
-import { useState } from "react";
 
-export const Counter = ({ name }) => {
-  const [value, setValue] = useState(0);
-
-  const handleIncrement = () => {
-    if (value <= 0) {
-      return;
-    }
-    setValue(value + 1);
-  };
-
-  const handleDecrement = () => {
-    if (value <= 0) {
-      return;
-    }
-    setValue(value - 1);
-  };
-
+export const Counter = ({ name, count, onIncrement, onDecrement }) => {
   return (
     <div className={styles.wrapper}>
       <Text>
-        {value}
+        {count}
         {name}
       </Text>
       <nav>
-        <IconAdd onClick={handleIncrement} />
-        <IconMinus onClick={handleDecrement} />
+        <IconAdd onClick={onIncrement} />
+        <IconMinus onClick={onDecrement} />
       </nav>
     </div>
   );
@@ -38,4 +21,5 @@ export const Counter = ({ name }) => {
 
 Counter.propTypes = {
   name: PropTypes.string,
+  count: PropTypes.number,
 };
